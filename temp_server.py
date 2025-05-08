@@ -30,7 +30,7 @@ def event_stream():         #get data from sensor every 2 seconds
                 'temperature_f': temp[1],
                 'timestamp': time.strftime("%Y-%m-%d %H:%M:%S")
             }
-            yield f"data: {json.dumps(data)}\n\n"
+            yield f"data: {json.dumps(data)}\n\n" #push json in Server sent events format
         time.sleep(2)
 
 @app.route('/stream')
@@ -38,4 +38,4 @@ def stream():    #push temp
     return Response(event_stream(), mimetype='text/event-stream')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000) #start flask on port 5000
