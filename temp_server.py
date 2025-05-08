@@ -33,7 +33,7 @@ def event_stream():         #get data from sensor every 2 seconds
             yield f"data: {json.dumps(data)}\n\n" #push json in Server sent events format
         time.sleep(2)
 
-@app.route('/stream')
+@app.route('/stream') #any client connect to stream gets data 
 def stream():    #push temp 
     return Response(event_stream(), mimetype='text/event-stream')
 
