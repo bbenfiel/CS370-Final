@@ -9,7 +9,7 @@ def listen_to_stream(url):
                 decoded = line.decode('utf-8') #convert to string
                 if decoded.startswith("data:"):
                     json_data = decoded[6:]  # Remove "data: " only json string left
-                    data = json.loads(json_data)  # Safe here since it's your own Pi
+                    data = json.loads(json_data) 
                     temp_f = data.get('temperature_f')
                     if temp_f is not None:
                         print(f"🌡Temp: {temp_f}°F")
