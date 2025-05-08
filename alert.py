@@ -12,7 +12,7 @@ def listen_to_stream(url):
                     data = json.loads(json_data) 
                     temp_f = data.get('temperature_f')
                     if temp_f is not None:
-                        print(f"🌡Temp: {temp_f}°F")
+                        print(f"Temp: {temp_f}°F")
                         if temp_f > 212:
                             print("ALERT: Temperature exceeds boiling point!")
 
