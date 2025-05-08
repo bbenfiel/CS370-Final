@@ -12,9 +12,9 @@ def listen_to_stream(url):
                     data = json.loads(json_data)  # Safe here since it's your own Pi
                     temp_f = data.get('temperature_f')
                     if temp_f is not None:
-                        print(f"🌡️ Temp: {temp_f}°F")
+                        print(f"🌡Temp: {temp_f}°F")
                         if temp_f > 212:
-                            print("🚨 ALERT: Temperature exceeds boiling point!")
+                            print("ALERT: Temperature exceeds boiling point!")
 
 if __name__ == '__main__':
     raspberry_pi_ip = "http://172.20.10.2:5000/stream" #pi ip stream from serve 
